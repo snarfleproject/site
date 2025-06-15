@@ -13,29 +13,6 @@
       color: #2c2c2c;
     }
 
-    /* NAVIGATION */
-    nav {
-      background-color: #ffe173;
-      border-bottom: 3px dashed #f4a261;
-      padding: 0.8rem 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      color: #007f5f;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.4rem 1rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     /* HEADER */
     header {
       background: linear-gradient(to right, #ffe173, #fff1a6);
@@ -75,6 +52,7 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+      margin: 0.5rem;
     }
 
     .cta-button:hover {
@@ -100,6 +78,13 @@
       align-items: center;
       gap: 1.2rem;
       margin-bottom: 2rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
     }
 
     section.hero img {
@@ -220,24 +205,18 @@
 </head>
 <body>
 
-  <nav>
-    <a href="chart.html">Memechart</a>
-  </nav>
-
   <header>
     <h1>$Snarfle 🐾</h1>
     <p class="subtitle">The Vibe-Driven Meme Revolution</p>
   </header>
 
-  <!-- Memechart Button under header -->
-  <div style="text-align: center; margin-top: 1rem;">
-    <a class="cta-button" href="chart.html">📈 View Memechart</a>
-  </div>
-
   <section class="hero">
     <div class="hero-content">
       <img src="pictures/snarfle.png" alt="Snarfle Logo" />
-      <a class="cta-button" href="#features">Join the Community</a>
+      <div class="button-row">
+        <a class="cta-button" href="#features">Join the Community</a>
+        <a class="cta-button" href="chart.html">📈 View Memechart</a>
+      </div>
     </div>
 
     <div class="hero-text-box">
@@ -261,4 +240,9 @@
   </section>
 
   <footer>
-    <p>Join the pack: <a href="https
+    <p>Join the pack: <a href="https://www.instagram.com/snarfleproject/#">Instagram</a> | <a href="#">Telegram</a> | <a href="https://x.com/snarfle_project">X Site</a> | <a href="https://www.tiktok.com/@snarfleproject">Tik Tok</a></p>
+    <p>&copy; 2025 Snarfle Labs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
