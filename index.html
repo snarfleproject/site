@@ -54,9 +54,21 @@
       color: #3d5a80;
     }
 
-    section.hero p {
+    .hero-text-box {
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      padding: 1.2rem;
+      background-color: #f2f2f2;
+      border: 3px dashed #ffbe0b;
+      border-radius: 15px;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-text-box p {
+      margin: 0;
       font-size: 1.1rem;
-      padding: 0 1rem;
+      color: #007f5f;
+      font-weight: bold;
     }
 
     .features {
@@ -128,7 +140,7 @@
         font-size: 1.3rem;
       }
 
-      section.hero p {
+      .hero-text-box p {
         font-size: 1rem;
       }
 
@@ -151,27 +163,10 @@
   <section class="hero">
     <img src="pictures/snarfle.png" alt="Snarfle Logo" />
     <h2>Born for Memes. Built for Community.</h2>
-    <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
+    <div class="hero-text-box">
+      <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
+    </div>
   </section>
 
   <section class="features">
-    <div class="feature">
-      <h3>🐶 Meme-Powered</h3>
-      <p>Snarfle isn’t just cute. He’s viral by nature and made to trend.</p>
-    </div>
-    <div class="feature">
-      <h3>🌐 Community First</h3>
-      <p>100% decentralized and driven by its holders. No VCs, no BS.</p>
-    </div>
-    <div class="feature">
-      <h3>🧠 Utility Ahead</h3>
-      <p>From NFTs to staking, Snarfle evolves beyond the meme.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>Join the pack: <a href="#">@snarflecoin</a> | Telegram: <a href="#">t.me/snarflearmy</a></p>
-    <p>&copy; 2025 Snarfle Labs. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+    <div
