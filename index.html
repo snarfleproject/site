@@ -12,49 +12,62 @@
       background: linear-gradient(to bottom, #e0f7f5, #fefae0);
       color: #2c2c2c;
     }
+
     header {
       background-color: #ffe173;
       color: #2b2b2b;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
       border-bottom: 4px dashed #f4a261;
     }
+
     header h1 {
       margin: 0;
       font-size: 3rem;
       font-weight: bold;
       color: #d9480f;
     }
+
     section.hero {
       text-align: center;
       padding: 3rem 1rem;
       background-color: #fff7d6;
       background-image: url("pictures/snarflelambo.png");
-      background-size: contain;           /* Bild vollständig anzeigen */
-      background-repeat: no-repeat;       /* Keine Wiederholung */
-      background-position: center;        /* Zentriert */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       border-top: 3px dashed #f4a261;
       border-bottom: 3px dashed #f4a261;
     }
+
     section.hero img {
       width: 180px;
+      max-width: 80%;
       margin-bottom: 1rem;
       border-radius: 50%;
       border: 5px dotted #f4a261;
       background-color: white;
     }
+
     section.hero h2 {
       font-size: 2rem;
       color: #3d5a80;
     }
+
+    section.hero p {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
     .features {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 2rem;
+      padding: 2rem 1rem;
       background-color: #fefae0;
     }
+
     .feature {
       background-color: #ffffff;
       border-radius: 15px;
@@ -64,21 +77,68 @@
       width: 280px;
       text-align: center;
     }
+
     .feature h3 {
       color: #007f5f;
       font-size: 1.4rem;
+      margin-top: 0;
     }
+
     footer {
       background-color: #ffe173;
       color: #2c2c2c;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
       border-top: 4px dashed #f4a261;
     }
+
     a {
       color: #007f5f;
       font-weight: bold;
       text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section.hero h2 {
+        font-size: 1.6rem;
+      }
+
+      section.hero {
+        padding: 2rem 1rem;
+        background-size: 90%;
+      }
+
+      .feature {
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      section.hero h2 {
+        font-size: 1.3rem;
+      }
+
+      section.hero p {
+        font-size: 1rem;
+      }
+
+      .feature h3 {
+        font-size: 1.2rem;
+      }
+
+      .feature p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
