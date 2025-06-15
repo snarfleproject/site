@@ -57,17 +57,14 @@
     }
 
     .chart-box,
-    .image-box {
-      background-color: #ffffff;
-      border: 3px dashed #ffbe0b;
-      border-radius: 15px;
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      flex: 1 1 450px;
-      max-width: 550px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .image-box img {
+      width: 100%;
+      aspect-ratio: 11 / 9;
+      border: none;
+      border-radius: 10px;
+      object-fit: contain; /* war vorher: cover */
+      display: block;
+      background-color: #fffef0; /* sorgt für sauberen Hintergrund */
     }
 
     .chart-box iframe,
