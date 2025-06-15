@@ -49,14 +49,9 @@
       background-color: white;
     }
 
-    section.hero h2 {
-      font-size: 2rem;
-      color: #3d5a80;
-    }
-
     .hero-text-box {
       max-width: 600px;
-      margin: 1.5rem auto 0;
+      margin: 1.5rem auto;
       padding: 1.2rem;
       background-color: #f2f2f2;
       border: 3px dashed #ffbe0b;
@@ -64,11 +59,13 @@
       box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
     }
 
+    .hero-text-box h2,
     .hero-text-box p {
       margin: 0;
       font-size: 1.1rem;
       color: #007f5f;
       font-weight: bold;
+      text-align: center;
     }
 
     .features {
@@ -116,8 +113,8 @@
         font-size: 2.2rem;
       }
 
-      section.hero h2 {
-        font-size: 1.6rem;
+      .hero-text-box h2 {
+        font-size: 1.3rem;
       }
 
       section.hero {
@@ -136,11 +133,8 @@
         font-size: 1.8rem;
       }
 
-      section.hero h2 {
-        font-size: 1.3rem;
-      }
-
-      .hero-text-box p {
+      .hero-text-box p,
+      .hero-text-box h2 {
         font-size: 1rem;
       }
 
@@ -162,7 +156,11 @@
 
   <section class="hero">
     <img src="pictures/snarfle.png" alt="Snarfle Logo" />
-    <h2>Born for Memes. Built for Community.</h2>
+
+    <div class="hero-text-box">
+      <h2>Born for Memes. Built for Community.</h2>
+    </div>
+
     <div class="hero-text-box">
       <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
     </div>
