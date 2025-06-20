@@ -4,116 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>$Snarfle – The Meme Revolution</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #e0f7f5, #fefae0);
-      color: #2c2c2c;
+    :root {
+      --primary: #007f5f;
+      --accent: #ffbe0b;
+      --bg-gradient: linear-gradient(to bottom, #e0f7f5, #fefae0);
     }
 
-    /* HEADER */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Fredoka One', cursive;
+      background: var(--bg-gradient);
+      color: #2c2c2c;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     header {
       background: linear-gradient(to right, #ffe173, #fff1a6);
-      color: #2b2b2b;
-      padding: 2.5rem 1rem;
       text-align: center;
+      padding: 2.5rem 1rem;
       border-bottom: 4px dashed #f4a261;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeInDown 1s ease-out;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: bold;
+      font-size: 2.8rem;
       color: #d9480f;
-      text-shadow: 1px 1px 0 #fff;
+      text-shadow: 2px 2px 0 #fff;
     }
 
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #3e3e3e;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
       font-style: italic;
-      text-shadow: 0 1px 0 #fff;
+      margin-top: 0.5rem;
     }
 
-    /* BUTTON */
     .cta-button {
       display: inline-block;
-      background-color: #007f5f;
+      background-color: var(--primary);
       color: white;
-      padding: 0.8rem 1.6rem;
-      font-weight: bold;
-      border-radius: 25px;
-      font-size: 1.1rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+      font-weight: bold;
       margin: 0.5rem;
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     .cta-button:hover {
       background-color: #005f44;
+      transform: scale(1.05);
     }
 
-    /* HERO SECTION */
     section.hero {
       text-align: center;
-      padding: 3rem 0;
-      background-color: #fff7d6;
+      padding: 2rem 1rem 3rem;
       background-image: url("pictures/snarflebackground.png");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      border-top: 3px dashed #f4a261;
-      border-bottom: 3px dashed #f4a261;
+      border-top: 4px dashed #f4a261;
+      border-bottom: 4px dashed #f4a261;
+      animation: fadeIn 1s ease;
     }
 
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
+    .hero-content img {
+      width: 160px;
+      border-radius: 50%;
+      border: 5px dotted #f4a261;
+      margin-bottom: 1rem;
+      background: white;
+      animation: bounce 2s infinite;
     }
 
     .button-row {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-    }
-
-    section.hero img {
-      width: 180px;
-      max-width: 80%;
-      border-radius: 50%;
-      border: 5px dotted #f4a261;
-      background-color: white;
+      flex-wrap: wrap;
     }
 
     .hero-text-box {
-      max-width: 550px;
-      margin: 1rem auto;
-      padding: 1rem;
-      background-color: #f2f2f2;
-      border: 3px dashed #ffbe0b;
+      background-color: rgba(255, 255, 255, 0.85);
+      border: 3px dashed var(--accent);
       border-radius: 15px;
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      max-width: 90%;
+      margin: 1.5rem auto 0;
+      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
     }
 
     .hero-text-box p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #007f5f;
+      color: var(--primary);
       font-weight: bold;
-      text-align: center;
+      font-size: 1rem;
     }
 
-    /* FEATURES */
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -121,90 +114,93 @@
       gap: 2rem;
       padding: 3rem 1rem;
       background-color: #fefae0;
+      animation: fadeInUp 1s ease;
     }
 
     .feature {
-      background-color: #ffffff;
-      border-radius: 15px;
-      padding: 1.8rem;
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-      border: 3px dashed #ffbe0b;
-      width: 280px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 2rem;
+      width: 270px;
       text-align: center;
-      transition: transform 0.2s ease;
+      border: 3px dashed var(--accent);
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
     }
 
     .feature:hover {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .feature h3 {
-      color: #007f5f;
-      font-size: 1.4rem;
-      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.3rem;
     }
 
     .feature p {
-      font-size: 1rem;
-      color: #2c2c2c;
+      font-size: 0.95rem;
     }
 
-    /* FOOTER */
     footer {
       background-color: #ffe173;
-      color: #2c2c2c;
       padding: 2rem 1rem;
       text-align: center;
       border-top: 4px dashed #f4a261;
+      font-size: 0.95rem;
     }
 
-    footer p {
-      margin: 0.3rem 0;
-    }
-
-    a {
-      color: #007f5f;
+    footer a {
+      color: var(--primary);
       font-weight: bold;
+      margin: 0 0.4rem;
       text-decoration: underline;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      section.hero {
-        padding: 2rem 0;
-      }
-
-      .feature {
-        width: 100%;
-        max-width: 90%;
-      }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 480px) {
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 600px) {
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
-      .hero-text-box p {
+      .subtitle {
         font-size: 1rem;
       }
 
-      .feature h3 {
-        font-size: 1.2rem;
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
       }
 
-      .feature p {
-        font-size: 0.95rem;
+      .feature {
+        width: 90%;
+      }
+
+      .hero-content img {
+        width: 120px;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>$Snarfle 🐾</h1>
     <p class="subtitle">The Vibe-Driven Meme Revolution</p>
@@ -217,10 +213,9 @@
         <a class="cta-button" href="#features">Join the Community</a>
         <a class="cta-button" href="chart.html">View Memechart</a>
       </div>
-    </div>
-
-    <div class="hero-text-box">
-      <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
+      <div class="hero-text-box">
+        <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
+      </div>
     </div>
   </section>
 
@@ -240,9 +235,13 @@
   </section>
 
   <footer>
-    <p>Join the pack: <a href="https://www.instagram.com/snarfleproject/#">Instagram</a> | <a href="#">Telegram</a> | <a href="https://x.com/snarfle_project">X Site</a> | <a href="https://www.tiktok.com/@snarfleproject">Tik Tok</a></p>
+    <p>Join the pack:
+      <a href="https://www.instagram.com/snarfleproject/">Instagram</a> |
+      <a href="#">Telegram</a> |
+      <a href="https://x.com/snarfle_project">X</a> |
+      <a href="https://www.tiktok.com/@snarfleproject">TikTok</a>
+    </p>
     <p>&copy; 2025 Snarfle Labs. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
