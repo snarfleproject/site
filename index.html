@@ -7,9 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #007f5f;
-      --accent: #ffbe0b;
-      --bg-gradient: linear-gradient(to bottom, #e0f7f5, #fefae0);
+      --primary: #ce6b27;
+      --accent: #ffde8a;
+      --bg-light: #fff6e0;
+      --text-dark: #3e1f0e;
+      --box: #ffffff;
     }
 
     * {
@@ -20,88 +22,71 @@
 
     body {
       font-family: 'Fredoka One', cursive;
-      background: var(--bg-gradient);
-      color: #2c2c2c;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
       overflow-x: hidden;
-      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, #ffe173, #fff1a6);
+      background: linear-gradient(to right, #ffe8b2, #ffd68f);
       text-align: center;
-      padding: 2.5rem 1rem;
-      border-bottom: 4px dashed #f4a261;
-      animation: fadeInDown 1s ease-out;
+      padding: 3rem 1rem;
+      border-bottom: 5px dashed #ce6b27;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      color: #d9480f;
-      text-shadow: 2px 2px 0 #fff;
+      font-size: 3rem;
+      color: var(--primary);
+      text-shadow: 1px 1px #fff;
     }
 
     .subtitle {
-      font-size: 1.1rem;
-      color: #3e3e3e;
+      font-size: 1.2rem;
       font-style: italic;
-      margin-top: 0.5rem;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary);
-      color: white;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0.5rem;
-      transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #005f44;
-      transform: scale(1.05);
+      color: #734325;
     }
 
     section.hero {
+      background: url('pictures/snarflebackground.png') repeat top center;
+      background-size: contain;
+      padding: 2rem 1rem;
+      border-top: 5px dashed #ce6b27;
+      border-bottom: 5px dashed #ce6b27;
       text-align: center;
-      padding: 2rem 1rem 3rem;
-      background-image: url("pictures/snarflebackground.png");
-      background-size: cover;
-      background-position: center;
-      border-top: 4px dashed #f4a261;
-      border-bottom: 4px dashed #f4a261;
-      animation: fadeIn 1s ease;
     }
 
     .hero-content img {
-      width: 160px;
+      width: 150px;
+      border: 4px dashed var(--primary);
       border-radius: 50%;
-      border: 5px dotted #f4a261;
-      margin-bottom: 1rem;
       background: white;
-      animation: bounce 2s infinite;
+      padding: 8px;
+      margin-bottom: 1rem;
     }
 
-    .button-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .cta-button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      margin: 0.3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #a54815;
     }
 
     .hero-text-box {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: #fff;
       border: 3px dashed var(--accent);
-      border-radius: 15px;
+      border-radius: 12px;
       padding: 1rem;
-      max-width: 90%;
       margin: 1.5rem auto 0;
-      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
-    }
-
-    .hero-text-box p {
+      max-width: 90%;
       color: var(--primary);
       font-weight: bold;
       font-size: 1rem;
@@ -111,91 +96,59 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
       padding: 3rem 1rem;
-      background-color: #fefae0;
-      animation: fadeInUp 1s ease;
+      gap: 2rem;
     }
 
     .feature {
-      background-color: white;
-      border-radius: 20px;
-      padding: 2rem;
-      width: 270px;
-      text-align: center;
+      background-color: var(--box);
       border: 3px dashed var(--accent);
+      border-radius: 18px;
+      width: 280px;
+      padding: 1.5rem;
+      text-align: center;
       box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .feature:hover {
-      transform: scale(1.05);
     }
 
     .feature h3 {
       color: var(--primary);
-      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
     }
 
     .feature p {
       font-size: 0.95rem;
+      color: #4e2d1b;
     }
 
     footer {
-      background-color: #ffe173;
+      background-color: #ffd68f;
       padding: 2rem 1rem;
+      border-top: 5px dashed #ce6b27;
       text-align: center;
-      border-top: 4px dashed #f4a261;
+    }
+
+    footer p, footer a {
+      color: var(--text-dark);
       font-size: 0.95rem;
-    }
-
-    footer a {
-      color: var(--primary);
+      text-decoration: none;
       font-weight: bold;
-      margin: 0 0.4rem;
+    }
+
+    footer a:hover {
       text-decoration: underline;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
-      .subtitle {
-        font-size: 1rem;
-      }
-
-      .cta-button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
+      .hero-content img {
+        width: 100px;
       }
 
       .feature {
         width: 90%;
-      }
-
-      .hero-content img {
-        width: 120px;
       }
     }
   </style>
@@ -209,12 +162,12 @@
   <section class="hero">
     <div class="hero-content">
       <img src="pictures/snarfle.png" alt="Snarfle Logo" />
-      <div class="button-row">
+      <div>
         <a class="cta-button" href="#features">Join the Community</a>
         <a class="cta-button" href="chart.html">View Memechart</a>
       </div>
       <div class="hero-text-box">
-        <p>Snarfle is more than a token – it's a movement powered by good vibes and good dogs.</p>
+        Snarfle is more than a token – it's a movement powered by good vibes and good dogs.
       </div>
     </div>
   </section>
