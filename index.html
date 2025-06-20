@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>$Snarfle – The Meme Revolution</title>
+  <title>$Snarfle Chart – Live Performance</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #ce6b27;
-      --accent: #ffde8a;
+      --primary: #d17826;
+      --accent: #fff1b2;
       --bg-light: #fff6e0;
       --text-dark: #3e1f0e;
       --box: #ffffff;
@@ -24,131 +24,143 @@
       font-family: 'Fredoka One', cursive;
       background-color: var(--bg-light);
       color: var(--text-dark);
-      overflow-x: hidden;
     }
 
     header {
       background: linear-gradient(to right, #ffe8b2, #ffd68f);
       text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 5px dashed #ce6b27;
+      padding: 2.5rem 1rem;
+      border-bottom: 4px dashed #ce6b27;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
       font-size: 3rem;
       color: var(--primary);
-      text-shadow: 1px 1px #fff;
+      text-shadow: 1px 1px 0 #fff;
     }
 
     .subtitle {
       font-size: 1.2rem;
-      font-style: italic;
-      color: #734325;
-    }
-
-    section.hero {
-      background: url('pictures/snarflebackground.png') repeat top center;
-      background-size: contain;
-      padding: 2rem 1rem;
-      border-top: 5px dashed #ce6b27;
-      border-bottom: 5px dashed #ce6b27;
-      text-align: center;
-    }
-
-    .hero-content img {
-      width: 150px;
-      border: 4px dashed var(--primary);
-      border-radius: 50%;
-      background: white;
-      padding: 8px;
+      color: #5e3d23;
+      margin-top: 0.5rem;
       margin-bottom: 1rem;
+      font-style: italic;
+      text-shadow: 0 1px 0 #fff;
     }
 
-    .cta-button {
-      background-color: var(--primary);
-      color: white;
-      padding: 0.6rem 1.4rem;
-      font-size: 1rem;
-      border-radius: 25px;
-      margin: 0.3rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+    section.chart-section {
+      padding: 4rem 1rem;
+      background-color: #fff7d6;
+      border-top: 3px dashed #f4a261;
+      border-bottom: 3px dashed #f4a261;
     }
 
-    .cta-button:hover {
-      background-color: #a54815;
-    }
-
-    .hero-text-box {
-      background-color: #fff;
-      border: 3px dashed var(--accent);
-      border-radius: 12px;
-      padding: 1rem;
-      margin: 1.5rem auto 0;
-      max-width: 90%;
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .features {
+    .chart-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 3rem 1rem;
+      align-items: stretch;
       gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .feature {
+    .chart-box,
+    .image-box {
       background-color: var(--box);
-      border: 3px dashed var(--accent);
-      border-radius: 18px;
-      width: 280px;
-      padding: 1.5rem;
-      text-align: center;
+      border: 3px dashed #ffbe0b;
+      border-radius: 15px;
       box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      flex: 1 1 450px;
+      max-width: 550px;
     }
 
-    .feature h3 {
-      color: var(--primary);
-      margin-bottom: 0.8rem;
+    .chart-box iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
     }
 
-    .feature p {
-      font-size: 0.95rem;
-      color: #4e2d1b;
+    .image-box img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
     }
 
     footer {
       background-color: #ffd68f;
+      color: var(--text-dark);
       padding: 2rem 1rem;
-      border-top: 5px dashed #ce6b27;
       text-align: center;
+      border-top: 4px dashed #f4a261;
     }
 
-    footer p, footer a {
-      color: var(--text-dark);
-      font-size: 0.95rem;
+    .button-link {
+      display: inline-block;
+      background-color: #ffbe0b;
+      color: #2c2c2c;
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 1rem;
+      border: 2px dashed #f4a261;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
     }
 
-    footer a:hover {
+    .button-link:hover {
+      background-color: #ffe173;
+      transform: translateY(-2px);
+    }
+
+    a {
+      color: #007f5f;
+      font-weight: bold;
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
+    /* Tablet */
+    @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
       }
 
-      .hero-content img {
-        width: 100px;
+      .chart-box iframe,
+      .image-box img {
+        height: 350px;
       }
 
-      .feature {
-        width: 90%;
+      .chart-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .chart-box iframe,
+      .image-box img {
+        height: 250px;
+      }
+
+      .chart-box,
+      .image-box {
+        padding: 0.8rem;
       }
     }
   </style>
@@ -156,44 +168,24 @@
 <body>
   <header>
     <h1>$Snarfle 🐾</h1>
-    <p class="subtitle">The Vibe-Driven Meme Revolution</p>
+    <p class="subtitle">Live Market Performance</p>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <img src="pictures/snarfle.png" alt="Snarfle Logo" />
-      <div>
-        <a class="cta-button" href="#features">Join the Community</a>
-        <a class="cta-button" href="chart.html">View Memechart</a>
+  <section class="chart-section">
+    <div class="chart-container">
+      <div class="chart-box">
+        <!-- Solana Chart -->
+        <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?symbol=BINANCE:SOLUSDT&locale=en"></iframe>
       </div>
-      <div class="hero-text-box">
-        Snarfle is more than a token – it's a movement powered by good vibes and good dogs.
-      </div>
-    </div>
-  </section>
 
-  <section class="features" id="features">
-    <div class="feature">
-      <h3>🐶 Meme-Powered</h3>
-      <p>Snarfle isn’t just cute. He’s viral by nature and made to trend.</p>
-    </div>
-    <div class="feature">
-      <h3>🌐 Community First</h3>
-      <p>100% decentralized and driven by its holders. No VCs, no BS.</p>
-    </div>
-    <div class="feature">
-      <h3>🧠 Utility Ahead</h3>
-      <p>From NFTs to staking, Snarfle evolves beyond the meme.</p>
+      <div class="image-box">
+        <img src="pictures/snarflechart2.png" alt="Snarfle Chart Illustration" />
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>Join the pack:
-      <a href="https://www.instagram.com/snarfleproject/">Instagram</a> |
-      <a href="#">Telegram</a> |
-      <a href="https://x.com/snarfle_project">X</a> |
-      <a href="https://www.tiktok.com/@snarfleproject">TikTok</a>
-    </p>
+    <a href="index.html" class="button-link">⬅ Back to Homepage</a>
     <p>&copy; 2025 Snarfle Labs. All rights reserved.</p>
   </footer>
 </body>
