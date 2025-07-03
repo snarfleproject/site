@@ -98,7 +98,7 @@
       transform: scale(1.05);
     }
 
-    .hero-text-box {
+    .hero-countdown-box {
       background-color: #fff;
       border: 3px dashed var(--accent);
       border-radius: 12px;
@@ -107,32 +107,8 @@
       max-width: 90%;
       color: var(--primary);
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.4rem;
       animation: fadeInUp 1.3s ease forwards;
-    }
-
-    .countdown {
-      text-align: center;
-      padding: 2rem 1rem;
-      animation: fadeInUp 1.3s ease forwards;
-    }
-
-    .countdown h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .countdown-box {
-      background-color: var(--box);
-      border: 3px dashed var(--accent);
-      border-radius: 18px;
-      display: inline-block;
-      padding: 1.2rem 2rem;
-      font-size: 1.5rem;
-      color: #3e1f0e;
-      font-weight: bold;
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
     }
 
     .features {
@@ -167,6 +143,25 @@
     .feature p {
       font-size: 0.95rem;
       color: #4e2d1b;
+    }
+
+    .text-box {
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeInUp 1.3s ease forwards;
+    }
+
+    .text-box-inner {
+      background-color: var(--box);
+      border: 3px dashed var(--accent);
+      border-radius: 18px;
+      display: inline-block;
+      padding: 1.2rem 2rem;
+      font-size: 1.2rem;
+      color: #3e1f0e;
+      font-weight: bold;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      max-width: 90%;
     }
 
     footer {
@@ -216,16 +211,17 @@
         <a class="cta-button" href="https://t.me/+3oJN2v-kBwhmZGEy">Join the Community</a>
         <a class="cta-button" href="chart.html">View Memechart</a>
       </div>
-      <div class="hero-text-box">
-        Snarfle is more than a token – it's a movement powered by good vibes and good dogs.
+      <div class="hero-countdown-box">
+        <div id="countdown">Loading countdown...</div>
+        <div style="font-size: 0.9rem; color: #734325;">Until Monday, 09:00 CEST</div>
       </div>
     </div>
   </section>
 
-  <section class="countdown">
-    <h2>Countdown to Launch 🕒</h2>
-    <div class="countdown-box" id="countdown">Loading...</div>
-    <p style="margin-top: 1rem; font-size: 1rem; color: #734325;">Until Monday, 09:00 CEST</p>
+  <section class="text-box">
+    <div class="text-box-inner">
+      Snarfle is more than a token – it's a movement powered by good vibes and good dogs.
+    </div>
   </section>
 
   <section class="features" id="features">
