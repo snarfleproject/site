@@ -111,6 +111,30 @@
       animation: fadeInUp 1.3s ease forwards;
     }
 
+    .countdown {
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeInUp 1.3s ease forwards;
+    }
+
+    .countdown h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .countdown-box {
+      background-color: var(--box);
+      border: 3px dashed var(--accent);
+      border-radius: 18px;
+      display: inline-block;
+      padding: 1.2rem 2rem;
+      font-size: 1.5rem;
+      color: #3e1f0e;
+      font-weight: bold;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -198,6 +222,12 @@
     </div>
   </section>
 
+  <section class="countdown">
+    <h2>Countdown to Launch 🕒</h2>
+    <div class="countdown-box" id="countdown">Loading...</div>
+    <p style="margin-top: 1rem; font-size: 1rem; color: #734325;">Until Monday, 09:00 CEST</p>
+  </section>
+
   <section class="features" id="features">
     <div class="feature">
       <h3>🐶 Meme-Powered</h3>
@@ -222,5 +252,41 @@
     </p>
     <p>&copy; 2025 Snarfle Labs. All rights reserved.</p>
   </footer>
+
+  <script>
+    function getNextMonday9amCEST() {
+      const now = new Date();
+      const day = now.getUTCDay();
+      const diff = (8 - day) % 7 || 7;
+      const nextMonday = new Date(Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate() + diff,
+        7, 0, 0
+      ));
+      return nextMonday;
+    }
+
+    const countdownDate = getNextMonday9amCEST().getTime();
+
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      if (distance <= 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "🚀 It's Snarfle Time!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
 </body>
 </html>
